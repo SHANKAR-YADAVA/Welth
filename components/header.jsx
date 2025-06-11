@@ -6,6 +6,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
 
+
 const Header = async () => {
   await checkUser();
   return (
