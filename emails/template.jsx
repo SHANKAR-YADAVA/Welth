@@ -48,7 +48,26 @@ const PREVIEW_DATA = {
 export default function EmailTemplate({
   userName = "",
   type = "monthly-report",
-  data = {},
+  data = {
+    // month: "December",
+    // stats: {
+    //   totalIncome: 5000,
+    //   totalExpenses: 3500,
+    //   byCategory: {
+    //     housing: 1500,
+    //     groceries: 600,
+    //     transportation: 400,
+    //     entertainment: 300,
+    //     utilities: 700,
+    //   },
+    // },
+    // insights: [
+    //   "Your housing expenses are 43% of your total spending.",
+    //   "Great job keeping entertainment expenses under control this month!",
+    //   "Setting up automatic savings could help you save 20% more of your income.",
+    // ],
+    // {dummydata}
+  },
 }) {
   if (type === "monthly-report") {
     return (
@@ -82,7 +101,7 @@ export default function EmailTemplate({
               </div>
             </Section>
 
-            {/* Category Breakdown
+            {/* Category Breakdown */}
             {data?.stats?.byCategory && (
               <Section style={styles.section}>
                 <Heading style={styles.heading}>Expenses by Category</Heading>
@@ -95,10 +114,10 @@ export default function EmailTemplate({
                   )
                 )}
               </Section>
-            )} */}
+            )}
 
             {/* AI Insights */}
-            {/* {data?.insights && (
+            {data?.insights && (
               <Section style={styles.section}>
                 <Heading style={styles.heading}>Welth Insights</Heading>
                 {data.insights.map((insight, index) => (
@@ -107,7 +126,7 @@ export default function EmailTemplate({
                   </Text>
                 ))}
               </Section>
-            )} */}
+            )}
 
             <Text style={styles.footer}>
               Thank you for using Welth. Keep tracking your finances for better
